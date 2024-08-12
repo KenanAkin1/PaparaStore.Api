@@ -85,8 +85,5 @@ API uç noktalarını test etmek için Swagger'ı veya Postman gibi bir API test
 
 
 ### İletişim
-<<<<<<< HEAD
 Herhangi bir soru veya sorunuz için kenanakin6134@gmail.com ile iletişime geçin.
-=======
-Herhangi bir soru veya sorunuz için kenanakin6134@gmail.com ile iletişime geçin.
->>>>>>> ae6970538db9c0f9db18831eb61295c38f20dff4
+
