@@ -27,5 +27,4 @@ public class WalletTransactionResponse : BaseResponse
     public string? Description { get; set; }
     public DateTime TransactionDate { get; set; }
 
-    public string UserName { get; set; }
 }

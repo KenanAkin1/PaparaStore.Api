@@ -10,9 +10,8 @@ namespace PaparaStore.Schema;
 
 public class WalletRequest : BaseRequest
 {
-    public long UserId { get; set; }
     public double Balance { get; set; }
-    public double RewardPoints { get; set; }
+    public PaymentRequest? PaymentRequest { get; set; }
 }
 public class WalletResponse : BaseResponse
 {

@@ -27,7 +27,7 @@ public class GetWalletByUserIdQueryHandler : IRequestHandler<GetWalletByUserIdQu
     {
         var userIdClaim = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier);
         var userId = long.Parse(userIdClaim.Value);
-        var entity = await unitOfWork.WalletRepository.FirstOrDefaultAsync(w => w.UserId == userId, "Wallet");
+        var entity = await unitOfWork.WalletRepository.FirstOrDefaultAsync(w => w.UserId == userId, "User");
         var mapped = mapper.Map<WalletResponse>(entity);
         return new ApiResponse<WalletResponse>(mapped);
     }

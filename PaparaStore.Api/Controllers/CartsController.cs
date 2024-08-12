@@ -19,7 +19,7 @@ namespace PaparaStore.Api.Controllers
         }
 
         [Authorize(Roles = "customer,admin")]
-        [HttpGet("cart")]
+        [HttpGet]
         public async Task<IActionResult> GetCartByUserId()
         {
             var query = new GetCartByUserIdQuery();
