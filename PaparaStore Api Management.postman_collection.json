@@ -1,0 +1,3223 @@
+{
+	"info": {
+		"_postman_id": "5ec05982-0f0f-4eb7-97c3-2eb1cdf79963",
+		"name": "PaparaStore Api Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37628613"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "cart",
+							"item": [
+								{
+									"name": "/api/Cart",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Cart/cart",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cart",
+												"cart"
+											]
+										},
+										"description": "Kullanıcının sepet bilgilerini getirir"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Cart/cart",
+													"path": [
+														"",
+														"api",
+														"Cart",
+														"cart"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							],
+							"description": "Sepet"
+						},
+						{
+							"name": "RemoveFromCart",
+							"item": [
+								{
+									"name": "/api/Cart/RemoveFromCart",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"ProductId\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Cart/RemoveFromCart",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cart",
+												"RemoveFromCart"
+											]
+										},
+										"description": "Kullanıcının sepetinden ürün çıkartır"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"ProductId\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/Cart/RemoveFromCart",
+													"path": [
+														"",
+														"api",
+														"Cart",
+														"RemoveFromCart"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							],
+							"description": "Sepetten çıkartma"
+						}
+					],
+					"description": "Sepet"
+				},
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "{CategoryId}",
+							"item": [
+								{
+									"name": "/api/Categories/:CategoryId",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Categories/:CategoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Categories",
+												":CategoryId"
+											],
+											"variable": [
+												{
+													"key": "CategoryId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ye göre kategori getirir"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Categories/:CategoryId",
+													"path": [
+														"",
+														"api",
+														"Categories",
+														":CategoryId"
+													],
+													"variable": [
+														{
+															"key": "CategoryId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"ImageUrl\": \"<string>\",\n    \"Url\": \"<string>\",\n    \"Tags\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Categories/:CategoryId",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ImageUrl\": \"<string>\",\n  \"Url\": \"<string>\",\n  \"Tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Categories/:CategoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Categories",
+												":CategoryId"
+											],
+											"variable": [
+												{
+													"key": "CategoryId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ye göre kategori değiştirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ImageUrl\": \"<string>\",\n  \"Url\": \"<string>\",\n  \"Tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/Categories/:CategoryId",
+													"path": [
+														"",
+														"api",
+														"Categories",
+														":CategoryId"
+													],
+													"variable": [
+														{
+															"key": "CategoryId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Categories/:CategoryId",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Categories/:CategoryId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Categories",
+												":CategoryId"
+											],
+											"variable": [
+												{
+													"key": "CategoryId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ye göre kategori silme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Categories/:CategoryId",
+													"path": [
+														"",
+														"api",
+														"Categories",
+														":CategoryId"
+													],
+													"variable": [
+														{
+															"key": "CategoryId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Categories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Categories"
+									]
+								},
+								"description": "Kategorileri getirme"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "//api/Categories",
+											"path": [
+												"",
+												"api",
+												"Categories"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": [\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ImageUrl\": \"<string>\",\n      \"Url\": \"<string>\",\n      \"Tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ImageUrl\": \"<string>\",\n      \"Url\": \"<string>\",\n      \"Tags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/api/Categories",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ImageUrl\": \"<string>\",\n  \"Url\": \"<string>\",\n  \"Tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Categories"
+									]
+								},
+								"description": "Kategori oluşturma"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ImageUrl\": \"<string>\",\n  \"Url\": \"<string>\",\n  \"Tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "//api/Categories",
+											"path": [
+												"",
+												"api",
+												"Categories"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"ImageUrl\": \"<string>\",\n    \"Url\": \"<string>\",\n    \"Tags\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					],
+					"description": "Kategoriler"
+				},
+				{
+					"name": "Coupons",
+					"item": [
+						{
+							"name": "{CouponId}",
+							"item": [
+								{
+									"name": "/api/Coupons/:CouponId",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Coupons/:CouponId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Coupons",
+												":CouponId"
+											],
+											"variable": [
+												{
+													"key": "CouponId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ye göre kupon getirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Coupons/:CouponId",
+													"path": [
+														"",
+														"api",
+														"Coupons",
+														":CouponId"
+													],
+													"variable": [
+														{
+															"key": "CouponId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"Code\": \"<string>\",\n    \"MinValue\": \"<double>\",\n    \"DiscountAmount\": \"<double>\",\n    \"EndDate\": \"<dateTime>\",\n    \"CouponQuantity\": \"<long>\"\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Coupons/:CouponId",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Code\": \"<string>\",\n  \"MinValue\": \"<double>\",\n  \"DiscountAmount\": \"<double>\",\n  \"EndDate\": \"<dateTime>\",\n  \"CouponQuantity\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Coupons/:CouponId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Coupons",
+												":CouponId"
+											],
+											"variable": [
+												{
+													"key": "CouponId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ye göre kupon değiştirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Code\": \"<string>\",\n  \"MinValue\": \"<double>\",\n  \"DiscountAmount\": \"<double>\",\n  \"EndDate\": \"<dateTime>\",\n  \"CouponQuantity\": \"<long>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/Coupons/:CouponId",
+													"path": [
+														"",
+														"api",
+														"Coupons",
+														":CouponId"
+													],
+													"variable": [
+														{
+															"key": "CouponId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Coupons/:CouponId",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Coupons/:CouponId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Coupons",
+												":CouponId"
+											],
+											"variable": [
+												{
+													"key": "CouponId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ye göre kupon silme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Coupons/:CouponId",
+													"path": [
+														"",
+														"api",
+														"Coupons",
+														":CouponId"
+													],
+													"variable": [
+														{
+															"key": "CouponId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Coupons",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Coupons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Coupons"
+									]
+								},
+								"description": "Kuponların hepsini getirme"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "//api/Coupons",
+											"path": [
+												"",
+												"api",
+												"Coupons"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": [\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"Code\": \"<string>\",\n      \"MinValue\": \"<double>\",\n      \"DiscountAmount\": \"<double>\",\n      \"EndDate\": \"<dateTime>\",\n      \"CouponQuantity\": \"<long>\"\n    },\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"Code\": \"<string>\",\n      \"MinValue\": \"<double>\",\n      \"DiscountAmount\": \"<double>\",\n      \"EndDate\": \"<dateTime>\",\n      \"CouponQuantity\": \"<long>\"\n    }\n  ],\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/api/Coupons",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Code\": \"<string>\",\n  \"MinValue\": \"<double>\",\n  \"DiscountAmount\": \"<double>\",\n  \"EndDate\": \"<dateTime>\",\n  \"CouponQuantity\": \"<long>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Coupons",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Coupons"
+									]
+								},
+								"description": "Kupon oluşturma"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Code\": \"<string>\",\n  \"MinValue\": \"<double>\",\n  \"DiscountAmount\": \"<double>\",\n  \"EndDate\": \"<dateTime>\",\n  \"CouponQuantity\": \"<long>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "//api/Coupons",
+											"path": [
+												"",
+												"api",
+												"Coupons"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"Code\": \"<string>\",\n    \"MinValue\": \"<double>\",\n    \"DiscountAmount\": \"<double>\",\n    \"EndDate\": \"<dateTime>\",\n    \"CouponQuantity\": \"<long>\"\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"item": [
+						{
+							"name": "/api/Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Email\": \"<string>\",\n  \"Password\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Login"
+									]
+								},
+								"description": "Kullanıcı girişi"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Email\": \"<string>\",\n  \"Password\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "//api/Login",
+											"path": [
+												"",
+												"api",
+												"Login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"ExpireTime\": \"<dateTime>\",\n    \"AccessToken\": \"<string>\",\n    \"Email\": \"<string>\"\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "{OrderNumber}",
+							"item": [
+								{
+									"name": "/api/Orders/:OrderNumber",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Orders/:OrderNumber",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Orders",
+												":OrderNumber"
+											],
+											"variable": [
+												{
+													"key": "OrderNumber",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Sipariş numarası ile sipariş getirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Orders/:OrderNumber",
+													"path": [
+														"",
+														"api",
+														"Orders",
+														":OrderNumber"
+													],
+													"variable": [
+														{
+															"key": "OrderNumber"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": {\n    \"OrderNumber\": \"<long>\",\n    \"TotalPrice\": \"<double>\",\n    \"FinalPrice\": \"<double>\",\n    \"TotalRewardAmount\": \"<double>\",\n    \"WalletBalanceUsed\": \"<double>\",\n    \"RewardPointsUsed\": \"<double>\",\n    \"OrderDetails\": [\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"ProductId\": \"<long>\",\n        \"OrderNumber\": \"<long>\",\n        \"ProductName\": \"<string>\",\n        \"Quantity\": \"<integer>\",\n        \"UnitPrice\": \"<double>\",\n        \"RewardAmount\": \"<double>\"\n      },\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"ProductId\": \"<long>\",\n        \"OrderNumber\": \"<long>\",\n        \"ProductName\": \"<string>\",\n        \"Quantity\": \"<integer>\",\n        \"UnitPrice\": \"<double>\",\n        \"RewardAmount\": \"<double>\"\n      }\n    ]\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Orders",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Orders"
+									]
+								},
+								"description": "Bütün siparişleri getirme"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "//api/Orders",
+											"path": [
+												"",
+												"api",
+												"Orders"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": [\n    {\n      \"OrderNumber\": \"<long>\",\n      \"TotalPrice\": \"<double>\",\n      \"FinalPrice\": \"<double>\",\n      \"TotalRewardAmount\": \"<double>\",\n      \"WalletBalanceUsed\": \"<double>\",\n      \"RewardPointsUsed\": \"<double>\",\n      \"OrderDetails\": [\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"ProductId\": \"<long>\",\n          \"OrderNumber\": \"<long>\",\n          \"ProductName\": \"<string>\",\n          \"Quantity\": \"<integer>\",\n          \"UnitPrice\": \"<double>\",\n          \"RewardAmount\": \"<double>\"\n        },\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"ProductId\": \"<long>\",\n          \"OrderNumber\": \"<long>\",\n          \"ProductName\": \"<string>\",\n          \"Quantity\": \"<integer>\",\n          \"UnitPrice\": \"<double>\",\n          \"RewardAmount\": \"<double>\"\n        }\n      ]\n    },\n    {\n      \"OrderNumber\": \"<long>\",\n      \"TotalPrice\": \"<double>\",\n      \"FinalPrice\": \"<double>\",\n      \"TotalRewardAmount\": \"<double>\",\n      \"WalletBalanceUsed\": \"<double>\",\n      \"RewardPointsUsed\": \"<double>\",\n      \"OrderDetails\": [\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"ProductId\": \"<long>\",\n          \"OrderNumber\": \"<long>\",\n          \"ProductName\": \"<string>\",\n          \"Quantity\": \"<integer>\",\n          \"UnitPrice\": \"<double>\",\n          \"RewardAmount\": \"<double>\"\n        },\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"ProductId\": \"<long>\",\n          \"OrderNumber\": \"<long>\",\n          \"ProductName\": \"<string>\",\n          \"Quantity\": \"<integer>\",\n          \"UnitPrice\": \"<double>\",\n          \"RewardAmount\": \"<double>\"\n        }\n      ]\n    }\n  ],\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/api/Orders",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CouponCode\": \"<string>\",\n  \"PaymentRequest\": {\n    \"CardNumber\": \"<string>\",\n    \"ExpiryDate\": \"<string>\",\n    \"CVV\": \"<string>\",\n    \"CardHolderName\": \"<string>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Orders",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Orders"
+									]
+								},
+								"description": "Sipariş oluşturma"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"CouponCode\": \"<string>\",\n  \"PaymentRequest\": {\n    \"CardNumber\": \"<string>\",\n    \"ExpiryDate\": \"<string>\",\n    \"CVV\": \"<string>\",\n    \"CardHolderName\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "//api/Orders",
+											"path": [
+												"",
+												"api",
+												"Orders"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": {\n    \"OrderNumber\": \"<long>\",\n    \"TotalPrice\": \"<double>\",\n    \"FinalPrice\": \"<double>\",\n    \"TotalRewardAmount\": \"<double>\",\n    \"WalletBalanceUsed\": \"<double>\",\n    \"RewardPointsUsed\": \"<double>\",\n    \"OrderDetails\": [\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"ProductId\": \"<long>\",\n        \"OrderNumber\": \"<long>\",\n        \"ProductName\": \"<string>\",\n        \"Quantity\": \"<integer>\",\n        \"UnitPrice\": \"<double>\",\n        \"RewardAmount\": \"<double>\"\n      },\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"ProductId\": \"<long>\",\n        \"OrderNumber\": \"<long>\",\n        \"ProductName\": \"<string>\",\n        \"Quantity\": \"<integer>\",\n        \"UnitPrice\": \"<double>\",\n        \"RewardAmount\": \"<double>\"\n      }\n    ]\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "{productId}",
+							"item": [
+								{
+									"name": "/api/Products/:productId",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ye göre ürün getirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Products/:productId",
+													"path": [
+														"",
+														"api",
+														"Products",
+														":productId"
+													],
+													"variable": [
+														{
+															"key": "productId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"CategoryIds\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"ImageUrl\": \"<string>\",\n    \"Price\": \"<double>\",\n    \"StockQuantity\": \"<integer>\",\n    \"RewardPercantage\": \"<integer>\",\n    \"MaxRewardAmount\": \"<double>\",\n    \"CategoryNames\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"CategoryTags\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Products/:productId",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ImageUrl\": \"<string>\",\n  \"Price\": \"<double>\",\n  \"StockQuantity\": \"<integer>\",\n  \"RewardPercantage\": \"<integer>\",\n  \"MaxRewardAmount\": \"<double>\",\n  \"ProductCodes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CategoryIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ye göre ürün değiştirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ImageUrl\": \"<string>\",\n  \"Price\": \"<double>\",\n  \"StockQuantity\": \"<integer>\",\n  \"RewardPercantage\": \"<integer>\",\n  \"MaxRewardAmount\": \"<double>\",\n  \"ProductCodes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CategoryIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/Products/:productId",
+													"path": [
+														"",
+														"api",
+														"Products",
+														":productId"
+													],
+													"variable": [
+														{
+															"key": "productId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Products/:productId",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Products/:productId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Products",
+												":productId"
+											],
+											"variable": [
+												{
+													"key": "productId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ye göre ürün silme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Products/:productId",
+													"path": [
+														"",
+														"api",
+														"Products",
+														":productId"
+													],
+													"variable": [
+														{
+															"key": "productId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "GetByCategory",
+							"item": [
+								{
+									"name": "/api/Products/GetByCategory",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Products/GetByCategory?categoryName=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Products",
+												"GetByCategory"
+											],
+											"query": [
+												{
+													"key": "categoryName",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Kategori ismine göre ürün getirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Products/GetByCategory?categoryName=<string>",
+													"path": [
+														"",
+														"api",
+														"Products",
+														"GetByCategory"
+													],
+													"query": [
+														{
+															"key": "categoryName",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": [\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"CategoryIds\": [\n        \"<long>\",\n        \"<long>\"\n      ],\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ImageUrl\": \"<string>\",\n      \"Price\": \"<double>\",\n      \"StockQuantity\": \"<integer>\",\n      \"RewardPercantage\": \"<integer>\",\n      \"MaxRewardAmount\": \"<double>\",\n      \"CategoryNames\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"CategoryTags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"CategoryIds\": [\n        \"<long>\",\n        \"<long>\"\n      ],\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ImageUrl\": \"<string>\",\n      \"Price\": \"<double>\",\n      \"StockQuantity\": \"<integer>\",\n      \"RewardPercantage\": \"<integer>\",\n      \"MaxRewardAmount\": \"<double>\",\n      \"CategoryNames\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"CategoryTags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "AddToCart",
+							"item": [
+								{
+									"name": "/api/Products/AddToCart",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"ProductId\": \"<long>\",\n  \"Quantity\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Products/AddToCart",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Products",
+												"AddToCart"
+											]
+										},
+										"description": "Ürünü sepete ekleme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"ProductId\": \"<long>\",\n  \"Quantity\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/Products/AddToCart",
+													"path": [
+														"",
+														"api",
+														"Products",
+														"AddToCart"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Products",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/Products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									]
+								},
+								"description": "Bütün ürünleri getirme"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "//api/Products",
+											"path": [
+												"",
+												"api",
+												"Products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": [\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"CategoryIds\": [\n        \"<long>\",\n        \"<long>\"\n      ],\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ImageUrl\": \"<string>\",\n      \"Price\": \"<double>\",\n      \"StockQuantity\": \"<integer>\",\n      \"RewardPercantage\": \"<integer>\",\n      \"MaxRewardAmount\": \"<double>\",\n      \"CategoryNames\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"CategoryTags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    },\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"CategoryIds\": [\n        \"<long>\",\n        \"<long>\"\n      ],\n      \"Name\": \"<string>\",\n      \"Description\": \"<string>\",\n      \"ImageUrl\": \"<string>\",\n      \"Price\": \"<double>\",\n      \"StockQuantity\": \"<integer>\",\n      \"RewardPercantage\": \"<integer>\",\n      \"MaxRewardAmount\": \"<double>\",\n      \"CategoryNames\": [\n        \"<string>\",\n        \"<string>\"\n      ],\n      \"CategoryTags\": [\n        \"<string>\",\n        \"<string>\"\n      ]\n    }\n  ],\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "/api/Products",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ImageUrl\": \"<string>\",\n  \"Price\": \"<double>\",\n  \"StockQuantity\": \"<integer>\",\n  \"RewardPercantage\": \"<integer>\",\n  \"MaxRewardAmount\": \"<double>\",\n  \"ProductCodes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CategoryIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Products"
+									]
+								},
+								"description": "Ürün oluşturma"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Name\": \"<string>\",\n  \"Description\": \"<string>\",\n  \"ImageUrl\": \"<string>\",\n  \"Price\": \"<double>\",\n  \"StockQuantity\": \"<integer>\",\n  \"RewardPercantage\": \"<integer>\",\n  \"MaxRewardAmount\": \"<double>\",\n  \"ProductCodes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"CategoryIds\": [\n    \"<long>\",\n    \"<long>\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "//api/Products",
+											"path": [
+												"",
+												"api",
+												"Products"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"CategoryIds\": [\n      \"<long>\",\n      \"<long>\"\n    ],\n    \"Name\": \"<string>\",\n    \"Description\": \"<string>\",\n    \"ImageUrl\": \"<string>\",\n    \"Price\": \"<double>\",\n    \"StockQuantity\": \"<integer>\",\n    \"RewardPercantage\": \"<integer>\",\n    \"MaxRewardAmount\": \"<double>\",\n    \"CategoryNames\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"CategoryTags\": [\n      \"<string>\",\n      \"<string>\"\n    ]\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "UserContacts",
+					"item": [
+						{
+							"name": "ByUserId",
+							"item": [
+								{
+									"name": "/api/UserContacts/ByUserId",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/UserContacts/ByUserId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"UserContacts",
+												"ByUserId"
+											]
+										},
+										"description": "Kullanıcı iletişimini getirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/UserContacts/ByUserId",
+													"path": [
+														"",
+														"api",
+														"UserContacts",
+														"ByUserId"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"UserId\": \"<string>\",\n    \"CountryCode\": \"<string>\",\n    \"Phone\": \"<string>\",\n    \"UserName\": \"<string>\"\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/UserContacts/ByUserId",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"CountryCode\": \"<string>\",\n  \"Phone\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/UserContacts/ByUserId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"UserContacts",
+												"ByUserId"
+											]
+										},
+										"description": "Kullanıcı iletişimini değiştirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"CountryCode\": \"<string>\",\n  \"Phone\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/UserContacts/ByUserId",
+													"path": [
+														"",
+														"api",
+														"UserContacts",
+														"ByUserId"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/UserContacts/ByUserId",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/UserContacts/ByUserId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"UserContacts",
+												"ByUserId"
+											]
+										},
+										"description": "Kullanıcı iletişimini silme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/UserContacts/ByUserId",
+													"path": [
+														"",
+														"api",
+														"UserContacts",
+														"ByUserId"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/UserContacts",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"CountryCode\": \"<string>\",\n  \"Phone\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/UserContacts",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"UserContacts"
+									]
+								},
+								"description": "Kullanıcı iletişimi oluşturma"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"CountryCode\": \"<string>\",\n  \"Phone\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "//api/UserContacts",
+											"path": [
+												"",
+												"api",
+												"UserContacts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"UserId\": \"<string>\",\n    \"CountryCode\": \"<string>\",\n    \"Phone\": \"<string>\",\n    \"UserName\": \"<string>\"\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "User",
+							"item": [
+								{
+									"name": "/api/Users/User",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Users/User",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Users",
+												"User"
+											]
+										},
+										"description": "Kullanıcı bilgilerini getirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Users/User",
+													"path": [
+														"",
+														"api",
+														"Users",
+														"User"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"Email\": \"<string>\",\n    \"Password\": \"<string>\",\n    \"Role\": \"<string>\",\n    \"FirstName\": \"<string>\",\n    \"LastName\": \"<string>\",\n    \"LastLoginDate\": \"<dateTime>\",\n    \"Status\": \"<integer>\",\n    \"Wallet\": {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"UserId\": \"<long>\",\n      \"UserName\": \"<string>\",\n      \"Balance\": \"<double>\",\n      \"RewardPoints\": \"<double>\"\n    },\n    \"UserContacts\": [\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<string>\",\n        \"CountryCode\": \"<string>\",\n        \"Phone\": \"<string>\",\n        \"UserName\": \"<string>\"\n      },\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<string>\",\n        \"CountryCode\": \"<string>\",\n        \"Phone\": \"<string>\",\n        \"UserName\": \"<string>\"\n      }\n    ]\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Users/User",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Email\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Users/User",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Users",
+												"User"
+											]
+										},
+										"description": "Kullanıcı bilgilerini değiştirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Email\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/Users/User",
+													"path": [
+														"",
+														"api",
+														"Users",
+														"User"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "/api/Users/User",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Users/User",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Users",
+												"User"
+											]
+										},
+										"description": "Kullanıcı silme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Users/User",
+													"path": [
+														"",
+														"api",
+														"Users",
+														"User"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Users",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Email\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/Users",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"Users"
+									]
+								},
+								"description": "Customer kullanıcı oluşturma"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Email\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "//api/Users",
+											"path": [
+												"",
+												"api",
+												"Users"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"Email\": \"<string>\",\n    \"Password\": \"<string>\",\n    \"Role\": \"<string>\",\n    \"FirstName\": \"<string>\",\n    \"LastName\": \"<string>\",\n    \"LastLoginDate\": \"<dateTime>\",\n    \"Status\": \"<integer>\",\n    \"Wallet\": {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"UserId\": \"<long>\",\n      \"UserName\": \"<string>\",\n      \"Balance\": \"<double>\",\n      \"RewardPoints\": \"<double>\"\n    },\n    \"UserContacts\": [\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<string>\",\n        \"CountryCode\": \"<string>\",\n        \"Phone\": \"<string>\",\n        \"UserName\": \"<string>\"\n      },\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<string>\",\n        \"CountryCode\": \"<string>\",\n        \"Phone\": \"<string>\",\n        \"UserName\": \"<string>\"\n      }\n    ]\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "UsersControllerForAdmin",
+					"item": [
+						{
+							"name": "ByParameters",
+							"item": [
+								{
+									"name": "/api/UsersControllerForAdmin/ByParameters",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/UsersControllerForAdmin/ByParameters?FirstName=<string>&LastName=<string>&Email=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"UsersControllerForAdmin",
+												"ByParameters"
+											],
+											"query": [
+												{
+													"key": "FirstName",
+													"value": "<string>"
+												},
+												{
+													"key": "LastName",
+													"value": "<string>"
+												},
+												{
+													"key": "Email",
+													"value": "<string>"
+												}
+											]
+										},
+										"description": "Ad soyad veya email ile kullanıcı çağırma"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/UsersControllerForAdmin/ByParameters?FirstName=<string>&LastName=<string>&Email=<string>",
+													"path": [
+														"",
+														"api",
+														"UsersControllerForAdmin",
+														"ByParameters"
+													],
+													"query": [
+														{
+															"key": "FirstName",
+															"value": "<string>"
+														},
+														{
+															"key": "LastName",
+															"value": "<string>"
+														},
+														{
+															"key": "Email",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": [\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"Email\": \"<string>\",\n      \"Password\": \"<string>\",\n      \"Role\": \"<string>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"LastLoginDate\": \"<dateTime>\",\n      \"Status\": \"<integer>\",\n      \"Wallet\": {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<long>\",\n        \"UserName\": \"<string>\",\n        \"Balance\": \"<double>\",\n        \"RewardPoints\": \"<double>\"\n      },\n      \"UserContacts\": [\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"UserId\": \"<string>\",\n          \"CountryCode\": \"<string>\",\n          \"Phone\": \"<string>\",\n          \"UserName\": \"<string>\"\n        },\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"UserId\": \"<string>\",\n          \"CountryCode\": \"<string>\",\n          \"Phone\": \"<string>\",\n          \"UserName\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"Email\": \"<string>\",\n      \"Password\": \"<string>\",\n      \"Role\": \"<string>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"LastLoginDate\": \"<dateTime>\",\n      \"Status\": \"<integer>\",\n      \"Wallet\": {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<long>\",\n        \"UserName\": \"<string>\",\n        \"Balance\": \"<double>\",\n        \"RewardPoints\": \"<double>\"\n      },\n      \"UserContacts\": [\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"UserId\": \"<string>\",\n          \"CountryCode\": \"<string>\",\n          \"Phone\": \"<string>\",\n          \"UserName\": \"<string>\"\n        },\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"UserId\": \"<string>\",\n          \"CountryCode\": \"<string>\",\n          \"Phone\": \"<string>\",\n          \"UserName\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "create-admin",
+							"item": [
+								{
+									"name": "/api/UsersControllerForAdmin/create-admin",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Email\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/UsersControllerForAdmin/create-admin",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"UsersControllerForAdmin",
+												"create-admin"
+											]
+										},
+										"description": "Admin kullanıcı oluşturma"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Email\": \"<string>\",\n  \"Password\": \"<string>\",\n  \"FirstName\": \"<string>\",\n  \"LastName\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/UsersControllerForAdmin/create-admin",
+													"path": [
+														"",
+														"api",
+														"UsersControllerForAdmin",
+														"create-admin"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"Email\": \"<string>\",\n    \"Password\": \"<string>\",\n    \"Role\": \"<string>\",\n    \"FirstName\": \"<string>\",\n    \"LastName\": \"<string>\",\n    \"LastLoginDate\": \"<dateTime>\",\n    \"Status\": \"<integer>\",\n    \"Wallet\": {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"UserId\": \"<long>\",\n      \"UserName\": \"<string>\",\n      \"Balance\": \"<double>\",\n      \"RewardPoints\": \"<double>\"\n    },\n    \"UserContacts\": [\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<string>\",\n        \"CountryCode\": \"<string>\",\n        \"Phone\": \"<string>\",\n        \"UserName\": \"<string>\"\n      },\n      {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<string>\",\n        \"CountryCode\": \"<string>\",\n        \"Phone\": \"<string>\",\n        \"UserName\": \"<string>\"\n      }\n    ]\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "{UserId}",
+							"item": [
+								{
+									"name": "/api/UsersControllerForAdmin/:UserId",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/UsersControllerForAdmin/:UserId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"UsersControllerForAdmin",
+												":UserId"
+											],
+											"variable": [
+												{
+													"key": "UserId",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										},
+										"description": "Id ile kullanıcı silme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/UsersControllerForAdmin/:UserId",
+													"path": [
+														"",
+														"api",
+														"UsersControllerForAdmin",
+														":UserId"
+													],
+													"variable": [
+														{
+															"key": "UserId"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/UsersControllerForAdmin",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "text/plain"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api/UsersControllerForAdmin",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"UsersControllerForAdmin"
+									]
+								},
+								"description": "Bütün kullanıcıları çağırma"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer <token>",
+												"description": "Added as a part of security scheme: bearer"
+											}
+										],
+										"url": {
+											"raw": "//api/UsersControllerForAdmin",
+											"path": [
+												"",
+												"api",
+												"UsersControllerForAdmin"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"Data\": [\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"Email\": \"<string>\",\n      \"Password\": \"<string>\",\n      \"Role\": \"<string>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"LastLoginDate\": \"<dateTime>\",\n      \"Status\": \"<integer>\",\n      \"Wallet\": {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<long>\",\n        \"UserName\": \"<string>\",\n        \"Balance\": \"<double>\",\n        \"RewardPoints\": \"<double>\"\n      },\n      \"UserContacts\": [\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"UserId\": \"<string>\",\n          \"CountryCode\": \"<string>\",\n          \"Phone\": \"<string>\",\n          \"UserName\": \"<string>\"\n        },\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"UserId\": \"<string>\",\n          \"CountryCode\": \"<string>\",\n          \"Phone\": \"<string>\",\n          \"UserName\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"Email\": \"<string>\",\n      \"Password\": \"<string>\",\n      \"Role\": \"<string>\",\n      \"FirstName\": \"<string>\",\n      \"LastName\": \"<string>\",\n      \"LastLoginDate\": \"<dateTime>\",\n      \"Status\": \"<integer>\",\n      \"Wallet\": {\n        \"ServerDate\": \"<dateTime>\",\n        \"Id\": \"<long>\",\n        \"UserId\": \"<long>\",\n        \"UserName\": \"<string>\",\n        \"Balance\": \"<double>\",\n        \"RewardPoints\": \"<double>\"\n      },\n      \"UserContacts\": [\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"UserId\": \"<string>\",\n          \"CountryCode\": \"<string>\",\n          \"Phone\": \"<string>\",\n          \"UserName\": \"<string>\"\n        },\n        {\n          \"ServerDate\": \"<dateTime>\",\n          \"Id\": \"<long>\",\n          \"UserId\": \"<string>\",\n          \"CountryCode\": \"<string>\",\n          \"Phone\": \"<string>\",\n          \"UserName\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Wallets",
+					"item": [
+						{
+							"name": "Wallet",
+							"item": [
+								{
+									"name": "/api/Wallets/Wallet",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Wallets/Wallet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Wallets",
+												"Wallet"
+											]
+										},
+										"description": "Cüzdan bilgilerini getirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Wallets/Wallet",
+													"path": [
+														"",
+														"api",
+														"Wallets",
+														"Wallet"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": {\n    \"ServerDate\": \"<dateTime>\",\n    \"Id\": \"<long>\",\n    \"UserId\": \"<long>\",\n    \"UserName\": \"<string>\",\n    \"Balance\": \"<double>\",\n    \"RewardPoints\": \"<double>\"\n  },\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Balance",
+							"item": [
+								{
+									"name": "/api/Wallets/Balance",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Amount\": \"<double>\",\n  \"PaymentRequest\": {\n    \"CardNumber\": \"<string>\",\n    \"ExpiryDate\": \"<string>\",\n    \"CVV\": \"<string>\",\n    \"CardHolderName\": \"<string>\"\n  }\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Wallets/Balance",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Wallets",
+												"Balance"
+											]
+										},
+										"description": "Bakiye yükleme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Amount\": \"<double>\",\n  \"PaymentRequest\": {\n    \"CardNumber\": \"<string>\",\n    \"ExpiryDate\": \"<string>\",\n    \"CVV\": \"<string>\",\n    \"CardHolderName\": \"<string>\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "//api/Wallets/Balance",
+													"path": [
+														"",
+														"api",
+														"Wallets",
+														"Balance"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\",\n  \"ServerDate\": \"<dateTime>\",\n  \"ReferenceNumber\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "transactions",
+							"item": [
+								{
+									"name": "{referenceNumber}",
+									"item": [
+										{
+											"name": "/api/Wallets/transactions/:referenceNumber",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Wallets/transactions/:referenceNumber",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Wallets",
+														"transactions",
+														":referenceNumber"
+													],
+													"variable": [
+														{
+															"key": "referenceNumber",
+															"value": "<long>",
+															"description": "(Required) "
+														}
+													]
+												},
+												"description": "Cüzdan geçmişini referans numarası ile getirme"
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "text/plain"
+															},
+															{
+																"key": "Authorization",
+																"value": "Bearer <token>",
+																"description": "Added as a part of security scheme: bearer"
+															}
+														],
+														"url": {
+															"raw": "//api/Wallets/transactions/:referenceNumber",
+															"path": [
+																"",
+																"api",
+																"Wallets",
+																"transactions",
+																":referenceNumber"
+															],
+															"variable": [
+																{
+																	"key": "referenceNumber"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"Data\": [\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"WalletId\": \"<long>\",\n      \"ReferenceNumber\": \"<long>\",\n      \"InitialAmount\": \"<double>\",\n      \"SpentAmount\": \"<double>\",\n      \"RemainingAmount\": \"<double>\",\n      \"Description\": \"<string>\",\n      \"TransactionDate\": \"<dateTime>\"\n    },\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"WalletId\": \"<long>\",\n      \"ReferenceNumber\": \"<long>\",\n      \"InitialAmount\": \"<double>\",\n      \"SpentAmount\": \"<double>\",\n      \"RemainingAmount\": \"<double>\",\n      \"Description\": \"<string>\",\n      \"TransactionDate\": \"<dateTime>\"\n    }\n  ],\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "/api/Wallets/transactions",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "text/plain"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/Wallets/transactions",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Wallets",
+												"transactions"
+											]
+										},
+										"description": "Bütün cüzdan geçmişlerini getirme"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "text/plain"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer <token>",
+														"description": "Added as a part of security scheme: bearer"
+													}
+												],
+												"url": {
+													"raw": "//api/Wallets/transactions",
+													"path": [
+														"",
+														"api",
+														"Wallets",
+														"transactions"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"Data\": [\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"WalletId\": \"<long>\",\n      \"ReferenceNumber\": \"<long>\",\n      \"InitialAmount\": \"<double>\",\n      \"SpentAmount\": \"<double>\",\n      \"RemainingAmount\": \"<double>\",\n      \"Description\": \"<string>\",\n      \"TransactionDate\": \"<dateTime>\"\n    },\n    {\n      \"ServerDate\": \"<dateTime>\",\n      \"Id\": \"<long>\",\n      \"WalletId\": \"<long>\",\n      \"ReferenceNumber\": \"<long>\",\n      \"InitialAmount\": \"<double>\",\n      \"SpentAmount\": \"<double>\",\n      \"RemainingAmount\": \"<double>\",\n      \"Description\": \"<string>\",\n      \"TransactionDate\": \"<dateTime>\"\n    }\n  ],\n  \"Message\": \"<string>\",\n  \"IsSuccess\": \"<boolean>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
