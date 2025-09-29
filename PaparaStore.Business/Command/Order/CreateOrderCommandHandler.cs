@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using PaparaStore.Base.Response;
@@ -117,7 +117,7 @@ public class CreateOrderCommandHandler : IRequestHandler<CreateOrderCommand, Api
                 throw new Exception("No payment information provided.");
             }
 
-            // Ödeme işlemi gerçekleştirilir
+            // Payment transaction is completed
             var paymentSuccess = await paymentHandler.ProcessPaymentAsync(orderRequest.PaymentRequest, finalPrice);
             if (!paymentSuccess)
             {
